@@ -1,0 +1,5 @@
+INSERT INTO TB_POSTS (CREATED_AT, IMG_URL, POST) VALUES (NOW(), 'https://lh3.googleusercontent.com/proxy/j0rxt2qjk78AlTxAVJJhOUpSrIivmBxxKPQK3JKy4VEURvUwL-_yc-kigEVW8Tx6Q2YzIHP8qgitzL4Mq2revV3nDztDbPSyLjuqceh0PtnELU-nPpGw3-6--brMNOvNEsha2U1HEpDvdajn9PRhlHuzFVOVA4bqzg', 'More than friends, amigas!');
+INSERT INTO TB_POSTS (CREATED_AT, IMG_URL, POST) VALUES (NOW(), 'https://img.theweek.in/content/dam/week/webworld/feature/lifestyle/2018/january/good-morning.jpg', 'I hope everyone have a nice day');
+INSERT INTO TB_POSTS (CREATED_AT, IMG_URL, POST) VALUES (NOW(), 'https://storage.alboom.ninja/sites/7697/albuns/631190/img_6619.JPG?t=1586277800', 'Our love overflowed and it became three');
+INSERT INTO TB_POSTS (CREATED_AT, IMG_URL, POST) VALUES (NOW(), 'https://pbs.twimg.com/media/Df-gQVdVMAANF3Y.jpg', 'So me!');
+INSERT INTO TB_POSTS (CREATED_AT, IMG_URL, POST) VALUES (NOW(), 'https://conteudo.imguol.com.br/c/parceiros/1c/2020/02/11/kelly-clarkson-reproducao-1581424038603_v2_450x337.jpg', 'QUEEN! DIVA! MY HEART! EVERYTHING TO ME!');
