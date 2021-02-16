@@ -2,20 +2,28 @@ package com.purplepizza.postscrud.dto;
 
 import java.io.Serializable;
 
+import com.purplepizza.postscrud.entities.SocialMediaPosts;
+
 public class SocialMediaPostsDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String posts;
-	private String imgURL;
+	private String imgUrl;
 	
 	public SocialMediaPostsDTO() {
 	}
 
-	public SocialMediaPostsDTO(Long id, String posts, String imgURL) {
+	public SocialMediaPostsDTO(Long id, String posts, String imgUrl) {
 		this.id = id;
 		this.posts = posts;
-		this.imgURL = imgURL;
+		this.imgUrl = imgUrl;
+	}
+	
+	public SocialMediaPostsDTO(SocialMediaPosts entity) {
+		id = entity.getId();
+		posts = entity.getPost();
+		imgUrl = entity.getImgUrl();
 	}
 
 	public Long getId() {
@@ -35,11 +43,11 @@ public class SocialMediaPostsDTO implements Serializable {
 	}
 
 	public String getImgURL() {
-		return imgURL;
+		return imgUrl;
 	}
 
-	public void setImgURL(String imgURL) {
-		this.imgURL = imgURL;
+	public void setImgURL(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 }
