@@ -1,8 +1,11 @@
 package com.purplepizza.postscrud.services;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.MethodInvocationRecorder.Recorded.ToCollectionConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,4 +25,12 @@ public class SocialMediaPostsService {
 		SocialMediaPosts posts = obj.orElseThrow();
 		return new SocialMediaPostsDTO(posts);
 	}
+
+	@Transactional(readOnly = true)
+	public List<SocialMediaPostsDTO> findAll() {
+		List<SocialMediaPosts> list = repository.findAll();
+		return list.stream().map(x -> new SocialMediaPostsDTO(x)).collect(Collectors.toList());
+	}
+	
+	
 }
