@@ -32,5 +32,14 @@ public class SocialMediaPostsService {
 		return list.stream().map(x -> new SocialMediaPostsDTO(x)).collect(Collectors.toList());
 	}
 	
+	@Transactional
+	public SocialMediaPostsDTO insert(SocialMediaPostsDTO dto) {
+		SocialMediaPosts posts = new SocialMediaPosts();
+		posts.setPost(dto.getPosts());
+		posts.setImgUrl(dto.getImgURL());
+		posts = repository.save(posts);
+		return new SocialMediaPostsDTO(posts);
+	}
+	
 	
 }
