@@ -1,11 +1,13 @@
 package com.purplepizza.postscrud.services;
 
 import java.util.List;
+import java.util.Locale.Category;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.MethodInvocationRecorder.Recorded.ToCollectionConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,6 +41,19 @@ public class SocialMediaPostsService {
 		posts.setImgUrl(dto.getImgURL());
 		posts = repository.save(posts);
 		return new SocialMediaPostsDTO(posts);
+	}
+
+	@Transactional
+	public SocialMediaPostsDTO update(Long id, SocialMediaPostsDTO dto) {
+		try {
+			SocialMediaPosts entity = repository.getOne(id);
+			entity.setImgUrl(dto.getImgURL());
+			entity.setPost(dto.getPosts());
+			entity = repository.save(entity);
+			return new SocialMediaPostsDTO(entity);
+		} catch (EntityNotFoundException e) {
+			throw new EntityNotFoundException("Id not found: " + id);
+		}
 	}
 	
 	
